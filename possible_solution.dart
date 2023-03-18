@@ -19,8 +19,6 @@ abstract class Beverage {
   }
 
   String get description => _description;
-  //set description(String desc);
-
 }
 
 class HouseBlend extends Beverage {

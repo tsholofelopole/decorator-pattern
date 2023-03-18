@@ -5,11 +5,7 @@
 ///
 /// Component
 abstract class Beverage {
-  String _description = 'Unknown beverage';
-
-  String get description => _description;
-  set description(String desc);
-
+  String description = 'Unknown beverage';
   double cost();
 }
 
@@ -23,21 +19,11 @@ class HouseBlend extends Beverage {
   double cost() {
     return 20;
   }
-
-  @override
-  set description(String desc) {
-    this._description = desc;
-  }
 }
 
 class DarkRoast extends Beverage {
   DarkRoast() {
     description = "Dark roast Coffee";
-  }
-
-  @override
-  set description(String desc) {
-    this._description = desc;
   }
 
   @override
@@ -59,11 +45,6 @@ class Soy extends CondimentDecorator {
   }
 
   @override
-  set description(String desc) {
-    this._description = desc;
-  }
-
-  @override
   double cost() {
     return beverage.cost() + 15;
   }
@@ -76,30 +57,8 @@ class Whip extends CondimentDecorator {
   }
 
   @override
-  set description(String desc) {
-    this._description = desc;
-  }
-
-  @override
   double cost() {
     return beverage.cost() + 20;
-  }
-}
-
-class Milk extends CondimentDecorator {
-  Milk(Beverage beverage) {
-    this.beverage = beverage;
-    this.description = '${beverage.description}, Milk';
-  }
-
-  @override
-  set description(String desc) {
-    this._description = desc;
-  }
-
-  @override
-  double cost() {
-    return beverage.cost() + 10;
   }
 }
 
