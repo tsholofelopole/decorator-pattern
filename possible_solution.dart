@@ -1,24 +1,21 @@
 abstract class Beverage {
-  late String _description;
-  late bool _milk;
-  late bool _soy;
-  late bool _mocha;
-  late bool _whip;
+  String description;
+  bool milk;
+  bool soy;
+  bool mocha;
+  bool whip;
 
-  Beverage(this._description, this._milk, this._soy, this._mocha, this._whip);
+  Beverage(this.description, this.milk, this.soy, this.mocha, this.whip);
 
   double cost() {
     double cost = 0;
-
-    if (_milk) cost += 5.5;
-    if (_soy) cost += 10.0;
-    if (_mocha) cost += 15;
-    if (_whip) cost += 13.5;
+    if (milk) cost += 5.5;
+    if (soy) cost += 10.0;
+    if (mocha) cost += 15;
+    if (whip) cost += 13.5;
 
     return cost;
   }
-
-  String get description => _description;
 }
 
 class HouseBlend extends Beverage {

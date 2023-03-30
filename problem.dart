@@ -1,16 +1,11 @@
 abstract class Beverage {
-  late String description;
-
-  String getDescription() {
-    return description;
-  }
-
+  String description = 'Unknown beverage';
   double cost();
 }
 
 class HouseBlend extends Beverage {
   HouseBlend() {
-    description = "House blend.";
+    description = "House blend coffee";
   }
 
   @override
@@ -20,19 +15,19 @@ class HouseBlend extends Beverage {
 }
 
 class DarkRoast extends Beverage {
-  HouseBlend() {
-    description = "Dark roast.";
+  DarkRoast() {
+    description = "Dark roast Coffee";
   }
 
   @override
   double cost() {
-    return 10.0;
+    return 25;
   }
 }
 
 class Espresso extends Beverage {
-  HouseBlend() {
-    description = "Esspresso.";
+  Espresso() {
+    this.description = "Esspresso";
   }
 
   @override
